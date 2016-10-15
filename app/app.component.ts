@@ -1,7 +1,18 @@
+import { CustomerService } from './customer/customer.service';
 import { Component } from '@angular/core';
 
 @Component({
+    moduleId: module.id,
     selector: 'my-app',
-    template: '<h1>My First Angular App</h1>'
+    templateUrl: 'app.component.html',
+    providers: [ CustomerService ]
 })
-export class AppComponent { }
+export class AppComponent {
+    title = 'My First Angular 2 App';
+    wardsColor = 'green';
+    name = 'Manuel';
+
+    changeSuiteColor(){
+        this.wardsColor =  this.wardsColor === 'green' ? 'red' : 'green';
+    }
+ }
